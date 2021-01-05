@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #If you want to make Static folder for all project you can use code.
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    'C:/Users/20632/Documents/3- PROGRAMMATION/Django/Projects/dev/Blogger/src/static',
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     'C:/Users/20632/Documents/3- PROGRAMMATION/Django/Projects/dev/Blogger/src/static',
+# ]
