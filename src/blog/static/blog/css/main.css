@@ -24,3 +24,13 @@ body {
 .bg-light {
     background-color: #ccc !important;
 }
+
+
+/* Start Post content */
+
+.post {
+    border: 1px solid #ccc;
+}
+
+
+/* End Post content */

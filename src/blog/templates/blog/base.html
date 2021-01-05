@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
+    <link rel="shortcut icon" href="{% static 'blog/images/favicon.ico' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <!-- Start Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'blog/images/favicon.ico' %}" alt="شعار المدونة" width="30"> مدونة
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            دوراتي
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">دورت بايتون</a>
+                            <a class="dropdown-item" href="#">دورت دجانكو</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">دورت ادارت التعلم</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">من انا</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">تسجيل الدخول</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">تسجيل</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </header>
+    <section>
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    {% block content %}
+                    <!--  -->
+                    {% endblock content %}
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <h3 class="text-center bg-secondary text-light p-2">
+                            اخر التدوينات
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">التدوينة الاولى</a>
+                            </li>
+                            <li>
+                                <a href="#">التدوينة الثانية</a>
+                            </li>
+                            <li>
+                                <a href="#">التدوينة الثالثة</a>
+                            </li>
+                            <li>
+                                <a href="#">التدوينة الرابعة</a>
+                            </li>
+                            <li>
+                                <a href="#">التدوينة الخامسة</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <h3 class="text-center bg-secondary text-light p-2">
+                            اخر التعليقات
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">التعليق الاولى</a>
+                            </li>
+                            <li>
+                                <a href="#">التعليق الثانية</a>
+                            </li>
+                            <li>
+                                <a href="#">التعليق الثالثة</a>
+                            </li>
+                            <li>
+                                <a href="#">التعليق الرابعة</a>
+                            </li>
+                            <li>
+                                <a href="#">التعليق الخامسة</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-secondary">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md">
+                    <div class="card-group mt-3">
+                        <div class="card m-3">
+                            <h4 class="card-title text-center border-bottom p-2 m-3">
+                                من أنا
+                            </h4>
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img width="35" src="{% static 'blog/images/favicon.ico' %}" alt="">
+                                </div>
+                                من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي من أنا نص تجريبي
+                                من أنا نص تجريبي
+                            </div>
+                        </div>
+                        <div class="card m-3">
+                            <h4 class="card-title text-center border-bottom p-2 m-3">
+                                مواقع هامة
+                            </h4>
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        <a href="#">المواقع الاولى</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">المواقع الثانية</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">المواقع الثالثة</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">المواقع الرابعة</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">المواقع الخامسة</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card m-3">
+                            <h4 class="card-title text-center border-bottom p-2 m-3">
+                                وسائل التواصل الإجتماعي
+                            </h4>
+                            <h4 class="card-body text-center">
+                                <a class="text-secondary" href=""><i class="fab fa-facebook"></i></a>
+                                <a class="text-secondary" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="text-secondary" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="text-secondary" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="text-secondary" href=""><i class="fab fa-telegram"></i></a>
+                                <a class="text-secondary" href=""><i class="fab fa-linkedin"></i></a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-md text-center">
+                    <small class="text-light">&copy; جميع الحقوق محفوظة</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'blog/js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'blog/js/popper.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'blog/js/fontawsome.min.js' %}"></script>
+</body>
+
+</html>
