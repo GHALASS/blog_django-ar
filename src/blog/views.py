@@ -1,42 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from .models import Post
 
-posts = [
-    {
-        'title':'التدوينة الاولى',
-        'content':' نص التدوينة الاولى',
-        'post_date':'15-3-2019',
-        'author':'Ahmed Abouissa'
-    },
-    {
-        'title':'التدوينة الثانية',
-        'content':' نص التدوينة الثانية',
-        'post_date':'15-3-2019',
-        'author':'Ahmed Abouissa'
-    }, 
-    {
-        'title':'التدوينة الثالثة',
-        'content':' نص التدوينة الثالثة',
-        'post_date':'15-3-2019',
-        'author':'Ahmed Abouissa'
-    }, 
-    {
-        'title':'التدوينة الرابعة',
-        'content':' نص التدوينة الرابعة',
-        'post_date':'15-3-2019',
-        'author':'Ahmed Abouissa'
-    }, 
-    {
-        'title':'التدوينة الخامسة',
-        'content':' نص التدوينة الخامسة',
-        'post_date':'15-3-2019',
-        'author':'Ahmed Abouissa'
-    }
-]
-
-# Create your views here.
 def home(request):
     context = {
-        'title':'الرئيسية',
-        'posts': posts
+        'title':'الصفحة الرئيسية',
+        'posts': Post.objects.all()
     }
     return render(request, 'blog/index.html', context)
+def about(request):
+    context = {
+        'title':'من انا',
+    }
+    return render(request, 'blog/about.html', context)
+
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    context = {
+        'title':post.title,
+        'post':post,
+    }
+    return render(request, 'blog/detail.html', context)

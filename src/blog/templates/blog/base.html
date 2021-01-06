@@ -7,15 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
-    <link rel="shortcut icon" href="{% static 'blog/images/user.png' %}">
-    <title>Blogger</title>
+    <link rel="shortcut icon" href="{% static 'blog/images/user.png' %}"> {% if title %}
+    <title>مدونة | {{title}}</title>
+    {% else %}
+    <title>مدونة</title>
+    {% endif %}
 </head>
 
 <body>
     <header>
         <!-- Start Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'blog/images/user.png' %}" alt="شعار المدونة" width="30"> مدونة
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'home' %}">الرئيسية <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,7 +42,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">من انا</a>
+                        <a class="nav-link" href="{% url 'about' %}">من انا</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mr-auto">
@@ -67,43 +70,27 @@
                         <h3 class="text-center bg-secondary text-light p-2">
                             اخر التدوينات
                         </h3>
-                        <ul>
-                            <li>
-                                <a href="#">التدوينة الاولى</a>
-                            </li>
-                            <li>
-                                <a href="#">التدوينة الثانية</a>
-                            </li>
-                            <li>
-                                <a href="#">التدوينة الثالثة</a>
-                            </li>
-                            <li>
-                                <a href="#">التدوينة الرابعة</a>
-                            </li>
-                            <li>
-                                <a href="#">التدوينة الخامسة</a>
-                            </li>
-                        </ul>
+                        {% include 'blog/latest_posts.html' %}
                     </div>
                     <div class="card mb-3">
                         <h3 class="text-center bg-secondary text-light p-2">
                             اخر التعليقات
                         </h3>
-                        <ul>
-                            <li>
-                                <a href="#">التعليق الاولى</a>
+                        <ul class="list-group-flush latest-comment">
+                            <li class="list-group-item latest-comment-item">
+                                <a class="text-dark" href="#">التعليق الاولى</a>
                             </li>
-                            <li>
-                                <a href="#">التعليق الثانية</a>
+                            <li class="list-group-item latest-comment-item">
+                                <a class="text-dark" href="#">التعليق الثانية</a>
                             </li>
-                            <li>
-                                <a href="#">التعليق الثالثة</a>
+                            <li class="list-group-item latest-comment-item">
+                                <a class="text-dark" href="#">التعليق الثالثة</a>
                             </li>
-                            <li>
-                                <a href="#">التعليق الرابعة</a>
+                            <li class="list-group-item latest-comment-item">
+                                <a class="text-dark" href="#">التعليق الرابعة</a>
                             </li>
-                            <li>
-                                <a href="#">التعليق الخامسة</a>
+                            <li class="list-group-item latest-comment-item">
+                                <a class="text-dark" href="#">التعليق الخامسة</a>
                             </li>
                         </ul>
                     </div>
