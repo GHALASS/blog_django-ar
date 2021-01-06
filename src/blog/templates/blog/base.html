@@ -76,23 +76,7 @@
                         <h3 class="text-center bg-secondary text-light p-2">
                             اخر التعليقات
                         </h3>
-                        <ul class="list-group-flush latest-comment">
-                            <li class="list-group-item latest-comment-item">
-                                <a class="text-dark" href="#">التعليق الاولى</a>
-                            </li>
-                            <li class="list-group-item latest-comment-item">
-                                <a class="text-dark" href="#">التعليق الثانية</a>
-                            </li>
-                            <li class="list-group-item latest-comment-item">
-                                <a class="text-dark" href="#">التعليق الثالثة</a>
-                            </li>
-                            <li class="list-group-item latest-comment-item">
-                                <a class="text-dark" href="#">التعليق الرابعة</a>
-                            </li>
-                            <li class="list-group-item latest-comment-item">
-                                <a class="text-dark" href="#">التعليق الخامسة</a>
-                            </li>
-                        </ul>
+                        {% include 'blog/latest_comments.html' %}
                     </div>
                 </div>
             </div>
