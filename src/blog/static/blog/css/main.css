@@ -25,6 +25,9 @@ body {
     background-color: #ccc !important;
 }
 
+
+/* Start Sidebar */
+
 .latest-post,
 .latest-comment {
     padding: 0 15px;
@@ -47,7 +50,19 @@ body {
 }
 
 
-/* Start Post content */
+/* End Sidebar */
+
+header {
+    background-color: #eee !important;
+}
 
 
-/* End Post content */
+/* Start Comment */
+
+.comment {
+    background-color: #f8f8f8;
+    border: 1px dashed #ccc;
+}
+
+
+/* End Comment */
