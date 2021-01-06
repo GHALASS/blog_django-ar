@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .forms import UserCreationForm
+from .forms import UserCreationForm, LoginForm
 from django.contrib import messages
 
 def register(request):
@@ -16,4 +16,15 @@ def register(request):
     return render(request, 'user/register.html', {
         'title':'التسجيل',
         'form':form,
+    })
+
+def login_user(request):
+    if request.method == 'POST':
+        form = LoginForm()
+        
+    else:
+        form = LoginForm()
+    return render(request, 'user/login.html', {
+        'title': 'تسجيل الدخول',
+        'form':form
     })

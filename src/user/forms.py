@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.forms import fields
 
 class UserCreationForm(forms.ModelForm):
     username = forms.CharField(label='إسم المستخدم', max_length=30, help_text='إسم المستخدم يجب أن لا يحتوي على مسافات.')
@@ -23,3 +24,10 @@ class UserCreationForm(forms.ModelForm):
         if User.objects.filter(username=cd['username']).exists():
             raise forms.ValidationError('يوجد مستخدم مسجل بهذا الإسم')
         return cd['username']
+    
+class LoginForm(forms.ModelForm):
+    username = forms.CharField(label='إسم المستخدم')
+    password = forms.CharField(label='البريد الإلكتروني', widget=forms.PasswordInput)
+    class Meta:
+        model = User
+        fields = ('username', 'password')
